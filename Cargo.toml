@@ -12,12 +12,12 @@ crate-type = ["staticlib", "rlib"]
 name = "audio_thread_priority"
 
 [dependencies]
-cfg-if = "0.1"
+cfg-if = "1.0"
 log = "0.4"
-simple_logger = { version =  "0.4", optional = true }
+simple_logger = { version = "1.11", optional = true }
 
 [dev-dependencies]
-nix = "0.15.0"
+nix = "0.20.0"
 
 [features]
 terminal-logging = ["simple_logger"]
@@ -28,11 +28,11 @@ mach = "0.3"
 libc = "0.2"
 
 [target.'cfg(target_os = "windows")'.dependencies]
-winapi = { version = "0.3", features = [ "avrt", "errhandlingapi", "ntdef", "minwindef"] }
+winapi = { version = "0.3", features = ["avrt", "errhandlingapi", "ntdef", "minwindef"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 libc = "0.2"
 
 [target.'cfg(target_os = "linux")'.dependencies.dbus]
-version = "0.6.4"
+version = "0.9.2"
 optional = true
